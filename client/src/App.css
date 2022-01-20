@@ -1,0 +1,243 @@
+body{
+   padding:0 !important;
+   margin:0 !important;
+    background: ghostwhite;
+    font-family: 'roboto';
+}
+.navbar{
+   background: #192061;
+   padding:10px;
+   box-shadow: 0px 2px 2px grey;
+}
+
+.navbar a{
+   color:white;
+   text-decoration: none;
+   
+}
+
+.logo{
+   font-weight: bold;
+   font-size: 1.2em;
+}
+
+.mobile-nav{
+   background: #192061 ;
+   margin-top:10px;
+   margin-left: 10px;
+   padding:10px;
+   text-align: center;
+   box-shadow: 0px 2px 2px grey;
+   position: absolute;
+   z-index:1;
+   opacity: 90%;
+}
+.mobile-nav a{
+   color: white;
+   text-decoration: none;
+
+}
+
+.mobile-nav a:hover{
+   color: black;
+   text-decoration: none;
+
+}
+
+.navbar i{ 
+   font-weight: bold;
+   font-size:1.2em;
+}
+
+.search-btn{
+   border:none;
+   background: #192061;
+   color:white;
+
+}
+.fa-search{
+   font-weight:bold;
+
+}
+
+.fa-search:hover{
+   color:white;
+}
+.login-control{
+   border-radius: 10px;
+
+}
+.login-btn{
+   width:100%;
+   background: black;
+   color:white;
+   border-radius: 10px;
+}
+.login{
+   background: #192061;
+   min-height: 100vh;
+   padding:10px;
+
+}
+.login-link{
+   text-align: center !important;
+}
+
+.profile{
+   background: white;
+   padding:10px;
+   box-shadow: 0px 2px 2px grey;
+   border-radius: 5px;
+}
+.image{
+   width:50px;
+   height:50px;
+   border-radius: 50%;
+}
+.para{
+   margin-left: 1em;
+   font-style: italic;
+}
+
+.home-form{
+   margin-left: 10em;
+}
+
+.post-body{
+   min-height:10em;
+   background: white;
+}
+
+.fa-comment{
+   margin-left: 10px;
+}
+
+
+.fa-thumbs-up{
+   margin-right: 10px;
+}
+
+.img-card-top{
+   height:350px;
+}
+
+.members{
+   background: white;
+   padding:10px;
+   min-height:20vh;
+   box-shadow: 0px 2px 2px grey;
+   border-radius: 5px;
+}
+
+.members-link{
+   text-decoration: none !important;
+   color: #192061;
+   font-weight:bold;
+}
+.images{
+   height:100px;
+   width:100px;
+   border-radius: 50%;
+}
+.fa-clock-o{
+   color: #192061;
+
+}
+.card i{
+   color: #192061;
+
+}
+.card a{
+     text-decoration: none;
+}
+.card-name{
+   color: #192061;
+}
+
+.add-comment{
+     font-style: italic;
+}
+.card-footer{
+   background: white;
+}
+.status{
+     font-style:italic;
+     color: #192061;
+   }
+
+   .footer{
+      padding:10px;
+      background: rgb(42, 42, 53);
+   }
+
+   .copy{
+      color: ghostwhite;
+
+   }
+
+   .footer-span a{
+      color: ghostwhite;
+
+   }
+
+   .lg-search:focus{
+      border: 1px solid gainsboro;
+   }
+   .loader{
+      color: #192061;
+
+   }
+
+   
+   .sm-search:focus{
+      border: 1px solid gainsboro;
+   }
+   .span1{
+      margin-right: 10px;
+   }
+   .show-page{
+      background: #192061;
+      padding:10px;
+      color: white;
+      border-radius: 5px;
+   }
+   .feature_title{
+      text-transform: capitalize;
+   }
+
+   .profile-text{
+       color:#192061;
+       font-style: italic;
+   }
+
+
+   .profile-btn{
+      background-color: #192061;
+      width:100%;
+      padding:5px;
+      color:white;
+      box-shadow:0px 2px 2px grey;
+   }
+
+   .profile-btn:hover,:active{
+      color: white;
+   }
+   .receiver{
+      border:none;
+      background: ghostwhite;
+      color:ghostwhite;
+   }
+.btn-show{
+   color:#192061;
+}
+
+
+.report-btn{
+   background:#192061;
+   color: white;
+   cursor: pointer;
+  
+}
+.report-btn:hover{
+   color: white;
+}
