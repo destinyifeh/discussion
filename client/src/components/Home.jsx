@@ -86,6 +86,8 @@ function Home(){
         let recentFeatures = Array.from(recent);
         let allUsers= Array.from(verified);
 
+        document.title = 'Discussion | Home' ;
+
     return(
      
        <>

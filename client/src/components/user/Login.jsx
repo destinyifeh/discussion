@@ -114,7 +114,7 @@ function Login(){
      
 
 
-    
+           document.title = 'Discussion | Login' ;
 
     return(
            

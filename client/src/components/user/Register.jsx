@@ -220,6 +220,9 @@ return true;
       
         }, []) 
 
+           
+           document.title =  'Discussion | Register';
+
     return(
            
         <div className="container-fluid login">

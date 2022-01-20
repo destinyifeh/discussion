@@ -118,6 +118,8 @@ function Show(){
            }
        }
          let theComments = Array.from(comments);
+
+         document.title = `Discussion | ${slug}`;
     return(
              <>
            <Header/> 
@@ -145,7 +147,7 @@ function Show(){
 
            <form className="my-3 p-2" onSubmit={submitComment}>
                <div className="form-group">
-                   <label>Add Comment </label>
+                   <label>Leave a Reply </label>
                    <textarea className="form-control" rows="5" placeholder="comment..." value={commentBody} onChange={changeComment} />
                </div>
                <div className="form-group mt-3">
