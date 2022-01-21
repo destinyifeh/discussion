@@ -132,8 +132,8 @@ router.post('/api/user/register', upload.single('photo'), async(req, res)=>{
                port: 465,
                secure: true,
                auth: {
-                  user: 'alpacino7889@gmail.com',
-                  pass: 'wonder5555'
+                  user: process.env.GMAIL_EMAIL,
+                  pass: process.env.GMAIL_PASS
                },
                tls:{
                  rejectUnauthorized:false,
