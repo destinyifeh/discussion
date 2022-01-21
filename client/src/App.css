@@ -29,8 +29,8 @@ body{
    text-align: center;
    box-shadow: 0px 2px 2px grey;
    position: absolute;
-   z-index:1;
-   opacity: 90%;
+   border-radius: 10px;
+   
 }
 .mobile-nav a{
    color: white;
