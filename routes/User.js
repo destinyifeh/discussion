@@ -121,49 +121,10 @@ router.post('/api/user/register', upload.single('photo'), async(req, res)=>{
         }else{
           
 
-         let browserName = browser.name;
-         let browserVersion = browser.version;
-         let browserOS = browser.os;
          req.login(user, (err)=>{
             if(err) return res.status(400).send('Error:'+ " "+ err);
 
-           let transporter = nodemailer.createTransport({
-               host: 'smtp.gmail.com',
-               port: 465,
-               secure: true,
-               auth: {
-                  user: process.env.GMAIL_EMAIL,
-                  pass: process.env.GMAIL_PASS
-               },
-               tls:{
-                 rejectUnauthorized:false,
-               }
-           });
-           var mailOptions = {
-               to: user.email,
-               from: 'Discussion <noreply.'+process.env.GMAIL_EMAIL+'>',
-               subject: 'Discussion - logged in info',
-               text: 'You are receiving this because you (or someone else) have created an account on discussion forum.\n\n' +
-               'Please copy the following verification code, to complete the process:\n\n' +
-               'Browser Name: '+ " " + browserName + '\n\n' +
-               'Browser Version: '+ " " + browserVersion + '\n\n' +
-               'Browser OS: '+ " " + browserOS + '\n\n' +
-
-               'If you did not create this, please ignore this email.\n',
-   
-               
-               };
-            
-             transporter.sendMail(mailOptions, function(err, info){
-               if(err){
-                   console.log(err)
-               }else{
-                
-                  console.log(info.response)
-              }
-           })
-           //Logged in email end
-           res.send(user);
+             return res.send(user);
 
         })
         }
@@ -330,61 +291,8 @@ router.post('/api/user/register', upload.single('photo'), async(req, res)=>{
 
 
 
-/*router.post('/api/user/login', (req, res, next)=>{
-    passport.authenticate('local', (err, user)=>{
-        console.log(user)
-        if(err) return res.send(err);
-        if(!user){
-           return res.send('Incorrect password');
-        }else{
-
-            req.login(user, (err)=>{
-                if(err) return res.status(400).send('Error:'+ " "+ err);
-                res.send(user);
-             
-
-         })
 
         
-    }
-})(req, res, next)
-  })
-          
-*/
-
-
-
-
-
- /*router.post('/api/user/register', upload.single('photo'), async(req, res)=>{
-    console.log(req.body);
-   
-      let setPassword = await bcrypt.genSalt(10);
-      let securePassword = await bcrypt.hash(req.body.password, setPassword);
-      cloudinary.v2.uploader.upload(req.file.path, {folder: 'zenith', resource_type: 'auto'}, async(err, result)=>{
-          if(err) return console.log(err);
-    let newUser = {
-        browser: browser.version,
-         username: req.body.username,
-         email: req.body.email,
-         password: securePassword,
-         isVerified: false,
-         emailToken: Math.random().toString().substr(2, 6),
-         photo: result.secure_url,
-        }
-        if(req.body.email == 'ask4menow247@gmail.com'){
-            newUser.isAdmin=true;
-        }else{
-            newUser.isAdmin=false;
-        }
-          console.log(newUser)
-
-          await User.create(newUser)
-          .then(user=>res.status(200).json(user))
-          .catch(err=>res.status(400).json('Error:'+" "+err))
-
-        })
-    }) */
 
 
     router.get('/api/user/:username', async(req, res)=>{

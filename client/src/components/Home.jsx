@@ -15,7 +15,7 @@ function Home(){
      const [loadData, setLoadData] = useState(false);
      const [recent, setRecent] = useState(''); 
       const [verified, setVerified] = useState('');
-
+       const [dot , setDot] = useState('');
 
      let current = localStorage.getItem('online');
      let currentUser = JSON.parse(current);
@@ -31,15 +31,21 @@ function Home(){
         window.location.href=`/search/query=${query}`;
     };
      
-  
     
+
     useEffect(()=>{
         axios.get('/api/online-users')
         .then(res=>{
             console.log(res.data)
+             console.log(res.data.loginUsername)
             
-            
-           setOnline(res.data)
+              let dot = res.data.filter(loginUser=>loginUser.loginUsername);
+             
+               setDot(dot);
+              console.log(dot)
+             
+           setOnline(res.data);
+
             
         })
         .catch(err=>console.log(err.response));
@@ -76,7 +82,7 @@ function Home(){
          
         
          
- }, [])
+ }, [currentUser.username])
          
 
       let onlineUsers = Array.from(online);
@@ -85,6 +91,9 @@ function Home(){
         let features = Array.from(data);
         let recentFeatures = Array.from(recent);
         let allUsers= Array.from(verified);
+
+        let dotUser = Array.from(dot);
+       let check = dotUser.map(user=>user.loginUsername);
 
         document.title = 'Discussion | Home' ;
 
@@ -127,7 +136,7 @@ function Home(){
                          return(
                       <div className="card mb-3" key={feature._id}>
                           <div className="p-2">
-                          <span className=" p-2"> <Link className="card-name" to={`/user/${feature.username}`}><img className="image " src={feature.photo} alt=""/> {feature.username}</Link> <span className="status" > . {currentUser && currentUser.admin? 'Admin' : 'Member'}</span></span>
+                          <span className=" p-2"> <Link className="card-name" to={`/user/${feature.username}`}><img className="image " src={feature.photo} alt=""/> {feature.username}</Link> <span className="status" >{check.includes(feature.username)? <i className="fa fa-circle text-success circle"></i> : <i className="fa fa-circle circle2"></i>}  {currentUser && currentUser.admin? 'Admin' : 'Member'}</span></span>
                           <strong> <i className="fa fa-clock-o"></i> {dayjs(feature.createdAt).fromNow()}</strong>
                            <Link className="" to={`/feature/${feature.slug}`}><h5 className="mt-1 feature_title">{feature.title} </h5></Link>
                           <p className="card-text">{feature.description.substring(0, 60)}...</p> 
@@ -154,7 +163,7 @@ function Home(){
                     })}
                   </div>
                   <div className="col-md-4">
-                      <h5 className="text-center"> Recent</h5>
+                      <h5 className="text-center"> Recent Gists</h5>
                       {recentFeatures.map(feature=>{
                          return(
                       <div className="card mb-3" key={feature._id}>

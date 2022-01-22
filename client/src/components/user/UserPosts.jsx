@@ -45,6 +45,9 @@ let handleDelete=(slug)=>{
       console.log(res.data)
       setData({data: data.filter(feature=>feature.slug !== slug)});
       toast.success('Deleted');
+      setTimeout(()=>{
+         window.location.href='/';
+      },1000)
   })
   .catch(err=>{
       console.log(err.response)

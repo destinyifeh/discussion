@@ -137,7 +137,7 @@ function Show(){
          </div>
          {loadData ? '' : <h5 className="loader text-center">Loading ... </h5>}
          <div className=" col-md-6 show-header mx-auto mt-5">
-            <h5 className="feature_title">{title} <span className=""> by <Link className="" to={`/user/${username}`}><span className="show-name">  {username}</span> <img className="image img-thumbnail" src={photo} alt="profile" /> </Link> posted {dayjs(createdAt).format('DD/MM/YYYY')}</span></h5>
+            <h6 className="feature_title">{title} <span className=""> by <Link className="" to={`/user/${username}`}><span className="show-name">  {username}</span> <img className="image img-thumbnail" src={photo} alt="profile" /> </Link> Posted {dayjs(createdAt).format('DD/MM/YYYY')}</span></h6>
 
                 </div> 
          <div className="col-md-6 show-page mb-5 d-block mx-auto">

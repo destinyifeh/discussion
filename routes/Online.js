@@ -17,12 +17,20 @@ router.post('/api/online-users', async(req, res)=>{
         }
 
         console.log(onlineUser)
+
+        let checkUser = await Online.findOne({loginUsername: req.body.loginUsername})
+        console.log('checking' + " " +checkUser)
+
+        if(checkUser){
+            console.log('This user is already saved to database')
+            res.send('Online user exist already')
+        }else{
           
          Online.create(onlineUser)
         .then(users=>res.status(200).json(users))
         .catch(err=>res.status(400).json('Error:'+ " "+ err))
         
-      
+        }
     }
 
     catch(err){

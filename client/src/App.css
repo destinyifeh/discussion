@@ -3,6 +3,7 @@ body{
    margin:0 !important;
     background: ghostwhite;
     font-family: 'roboto';
+    user-select: none;
 }
 .navbar{
    background: #192061;
@@ -72,6 +73,9 @@ body{
    background: black;
    color:white;
    border-radius: 10px;
+}
+.login-btn:hover{
+   color: white;
 }
 .login{
    background: #192061;
@@ -164,6 +168,15 @@ body{
      font-style:italic;
      color: #192061;
    }
+
+   .circle{
+         font-size: 10px !important;
+   }
+
+   .circle2{
+      font-size: 10px !important;
+      color: grey !important;
+}
 
    .footer{
       padding:10px;

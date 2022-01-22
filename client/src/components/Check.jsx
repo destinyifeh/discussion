@@ -12,15 +12,17 @@ const Check = () =>{
        
         useEffect(()=>{
 
+
             let users={
                 loginUsername:currentUser.username,
                 photo: currentUser.photo,
             }
-           
-    
-            axios.post('/api/online-users', users)
+              
+               
+              axios.post('/api/online-users', users)
             .then(res=>{
                 console.log(res.data)
+                
                 
             })
     
@@ -28,9 +30,14 @@ const Check = () =>{
                 console.log(err.response)
             })
           
-        setTimeout(()=>{
+         setTimeout(()=>{
            window.location.href='/';
         }, 3000)
+
+    
+    
+
+      
 
     }, [currentUser.username, currentUser.photo])
 

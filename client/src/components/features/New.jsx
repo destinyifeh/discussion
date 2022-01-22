@@ -174,7 +174,7 @@ return true;
            <div className="d-flex justify-content-between my-2 col-lg-6 mx-lg-auto">
            <Link className=" text-white login-link" to="/">Home</Link>
 
-           <Link className=" text-white login-link " to="/">Profile</Link>
+           <Link className=" text-white login-link " to={`/user/${currentUser.username}`}>Profile</Link>
 
            </div>
 

@@ -69,7 +69,7 @@ function Header(){
           toast.success('logged out');
           setTimeout(()=>{
           window.location.href='/user/login';
-           }, 2000)
+           }, 1000)
       };
 
 
