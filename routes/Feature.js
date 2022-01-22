@@ -10,7 +10,7 @@ router.post('/api/feature/new', upload.single('image'), async(req, res)=>{
 
   cloudinary.v2.uploader.upload(req.file.path, {folder: 'zenith', resource_type: 'auto'}, (err, result)=>{  
       if(err){
-          console.log(err)
+          console.log(err);
       }else{
 
        let newFeature = {

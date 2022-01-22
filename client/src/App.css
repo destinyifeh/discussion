@@ -87,11 +87,17 @@ body{
    text-align: center !important;
 }
 
+.infos{
+   color: #192061;
+}
 .profile{
    background: white;
    padding:10px;
    box-shadow: 0px 2px 2px grey;
    border-radius: 5px;
+}
+.userText{
+   text-transform: capitalize;
 }
 .image{
    width:50px;
@@ -180,7 +186,8 @@ body{
 
    .footer{
       padding:10px;
-      background: rgb(42, 42, 53);
+     /* background: rgb(42, 42, 53);*/
+     background: #192061;
    }
 
    .copy{

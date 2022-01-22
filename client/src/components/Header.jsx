@@ -86,7 +86,7 @@ function Header(){
     };
 
        let current = localStorage.getItem('online');
-       let currentUser = JSON.parse(current)
+       let currentUser = JSON.parse(current);
       // console.log(currentUser)
        //let onlineUsers = Array.from(online);
       // let userId = currentUser._id;

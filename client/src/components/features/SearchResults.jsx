@@ -21,7 +21,7 @@ function SearchResults(){
            axios.get('/api/features/search')
            .then(res=>{
                console.log(res.data)
-               let data = res.data.filter(search=>search.title.toLowerCase().includes(query) || search.title.toUpperCase().includes(query))
+               let data = res.data.filter(search=>search.title.toLowerCase().includes(query) || search.title.toUpperCase().includes(query.toUpperCase()))
              
                 if(data.length > 0){
                 setData(data)

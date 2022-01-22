@@ -178,7 +178,7 @@ return true;
                    <textarea className="form-control" placeholder="description..." value={description} onChange={changeDescription} />
                </div>
                <div className="form-group mt-3">
-                   <button className="btn login-btn">Update</button>
+                   <button className="btn login-btn">Update Post</button>
                </div>
            </form>
            <div className="d-flex justify-content-between my-2 col-lg-6 mx-lg-auto">

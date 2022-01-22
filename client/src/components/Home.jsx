@@ -168,7 +168,7 @@ function Home(){
                          return(
                       <div className="card mb-3" key={feature._id}>
                           <div className="p-2">
-                          <span className=" p-2"> <Link className="card-name" to={`/user/${feature.username}`}><img className="image " src={feature.photo} alt=""/> {feature.username}</Link> <span className="status" > . {currentUser && currentUser.admin? 'Admin' : 'Member'}</span></span>
+                          <span className=" p-2"> <Link className="card-name" to={`/user/${feature.username}`}><img className="image " src={feature.photo} alt=""/> {feature.username}</Link> <span className="status" >{check.includes(feature.username)? <i className="fa fa-circle text-success circle"></i> : <i className="fa fa-circle circle2"></i>}  {currentUser && currentUser.admin? 'Admin' : 'Member'}</span></span>
                           <strong> <i className="fa fa-clock-o"></i> {dayjs(feature.createdAt).fromNow()}</strong>
                            <Link className="" to={`/feature/${feature.slug}`}><h5 className="mt-1 feature_title">{feature.title} </h5></Link>
                           <p className="card-text">{feature.description.substring(0, 60)}...</p> 

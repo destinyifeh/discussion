@@ -120,7 +120,6 @@ return true;
               console.log(email); 
 
               
-              //let checkUsername = users.filter(user=>user.username.toLowerCase().includes(username));
 
               let checkUsername = users.map(user=>user.username);
               let checkEmail = users.map(user=>user.email);
@@ -140,12 +139,12 @@ return true;
                 toast.error('Email exist');
                 return false;
             }; 
-             /* if(!email || !username || !password || !photo){
+              if(!email || !username || !password || !photo){
                  let err = 'You can not submit empty form';
                  console.log(err);
                  toast.error('You can not submit empty form');
                  return false;         
-              }; */
+              }; 
 
               if(password !== password2 ){
                  let err = 'Password do not match';

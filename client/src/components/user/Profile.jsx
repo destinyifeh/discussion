@@ -78,7 +78,7 @@ function Profile(){
 
     
     let current = localStorage.getItem('online');
-    let currentUser = JSON.parse(current)
+    let currentUser = JSON.parse(current);
 
         useEffect(()=>{
             setSender(currentUser.email)
@@ -122,20 +122,22 @@ function Profile(){
     return(
         <>
         <Header/>
-        <div className="container profile-content my-5">
+        <div className="container profile-content my-4">
            <div className="row">
                {isLoading? <h5 className="text-center">Loading....</h5> : ' '}
-               <div className="col-md-4">
+               <div className="col-md-4 my-2">
                 <h5 className="text-center">Info</h5>
                 <div className="container members">
-                         <div className="d-flex justify-content-center">
-                         <span className=" p-2"> <Link className="members-link" to={`/user/${user.username}`}><img className="images  img-thumbnail" src={user.photo} alt=" "/> {user.username} </Link></span>
-  
+                         <div className="text-center infos">
+                          <img className="images  img-thumbnail" src={user.photo} alt=" "/>
+                         <p> Username: {user.username} </p>
+                         <p>Status: {user.isAdmin? 'Admin' : 'Member' }</p>
+                        <p className="">Registered date: {dayjs(user.createdAt).format('DD/MM/YYYY')}</p>
                          </div>
                      </div>
                    </div>
                <div className="col-md-4">
-               <h5 className="text-center">{user.username} Posts </h5>
+               <h5 className="text-center userText my-2">{user.username} Posts </h5>
                     {userPosts.length > 0 ? userPosts.map((feature)=>{
                         return(
                             <div className="card mb-3" key={feature._id}>
