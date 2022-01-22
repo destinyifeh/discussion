@@ -21,7 +21,7 @@ function Show(){
       const [createdAt, setCreatedAt] = useState('');
       const [username, setUsername] = useState('');
       const [photo, setPhoto] = useState('');
-
+      const [recent, setRecent] = useState('');
 
       let {slug} = useParams();
       console.log(slug);
@@ -74,6 +74,21 @@ function Show(){
             
         });
 
+           //Getting related features
+
+        axios.get('/api/show/features/recent/'+slug)
+         .then(res=>{
+             console.log(res.data);
+             setRecent(res.data);
+         })
+         .catch(err=>{
+             console.log(err.response)
+         });
+
+
+       
+
+
         console.log(title)
         
   }, [currentUser.username, slug, title]);
@@ -118,6 +133,9 @@ function Show(){
            }
        }
          let theComments = Array.from(comments);
+          
+         let recents = Array.from(recent);
+
 
          document.title = `Discussion | ${slug}`;
     return(
@@ -173,9 +191,45 @@ function Show(){
              )
             })}
             </div>
-         </div>
-         </div>
-     <Footer/>
+             </div>
+                  <div className="container my-4">
+                      <div className="row">
+                          <div className="col-md-6 mx-auto">
+                        <h5 className="text-center">Recent Gists </h5>
+                      {recents.length > 0 ? recents.map(feature=>{
+                          return(
+                     <div className="card mb-3" key={feature._id}>
+                          <div className="p-2">
+                          <span className=" p-2"> <Link className="card-name" to={`/user/${feature.username}`}><img className="image " src={feature.photo} alt=""/> {feature.username}</Link> <span className="status" > . {currentUser && currentUser.admin? 'Admin' : 'Member'}</span></span>
+                          <strong> <i className="fa fa-clock-o"></i> {dayjs(feature.createdAt).fromNow()}</strong>
+                           <Link className="" to={`/feature/${feature.slug}`}><h5 className="mt-1 feature_title">{feature.title} </h5></Link>
+                          <p className="card-text">{feature.description.substring(0, 60)}...</p> 
+                          </div>
+                          
+                         <img className="img-card-top" src={feature.image} alt=""/>
+                          <div className="d-flex justify-content-between">
+                             <div className="d-flex justify-content-even p-2">
+                             <p><i className="fa fa-eye"></i> {feature.viewedBy.length} views </p>
+                              <p><i className="fa fa-comment"></i> {feature.comments.length} comments </p>
+                             </div>
+                             <div className="d-flex justify-content-even p-2">
+                             <Link className="" to={`/report/feature/${feature.title}`}>report <i className="fa fa-angle-double-right"></i></Link>
+
+
+                             </div>
+   
+                          </div>
+                          <div className="card-footer">
+                          <span className=" p-2"> <Link className="add-comment" to={`/feature/${feature.slug}`}><img className="image " src={currentUser?currentUser.photo: ''} alt=""/> Add a comment</Link></span>
+                          </div>
+                      </div>
+                          )
+                        }) : ''}
+                        </div>
+                        </div>
+               </div>
+          </div>
+      <Footer/>
      </>
     )
 }

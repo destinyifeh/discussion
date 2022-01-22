@@ -51,11 +51,31 @@ router.get('/api/features', async(req, res)=>{
 
 router.get('/api/features/recent', async(req, res)=>{
           
-    Feature.find({}).sort({createdAt:1}).limit(4)
+    Feature.find({}).sort({createdAt:-1}).skip(4).limit(4)
    .then(feature=>res.status(200).json(feature))
    .catch(err=>res.status(400).json('Error:' +" "+err))
 
 });
+
+//recent features for show page//
+
+
+router.get('/api/show/features/recent/:slug', async(req, res)=>{
+    try{
+     let feature = await Feature.findOne({slug: req.params.slug})
+
+    Feature.find({$nin: feature.slug}).sort({createdAt:-1}).limit(4)
+   .then(feature=>res.status(200).json(feature))
+   .catch(err=>res.status(400).json('Error:' +" "+err))
+    }
+    catch(err){
+        console.log(err.message)
+    }
+
+});
+
+
+
 
 //For search results//
 
@@ -225,7 +245,24 @@ router.get('/api/comments/feature/:slug', async(req, res)=>{
     catch(err){
         console.log(err.message)
     }
-})
+});
+
+
+/*router.get('/api/feature/related/:slug', async(req, res)=>{
+      try{
+             
+        let feature = await Feature.findOne({slug: req.params.slug})
+           
+        let q = new RegExp(feature.title, 'i')
+           Feature.find({slug:{$nin: feature.slug}, $or:[{title:q}]}).sort({createdAt:-1})
+         .then(related=>res.json(related))
+        .catch(err=>res.status(400).json('Error:'+''+err))
+    
+      }
+      catch(err){
+          console.log(err.message)
+      }
+})*/
 
 
 
