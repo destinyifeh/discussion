@@ -95,7 +95,6 @@ function Header(){
        <div className="container-fluid navbar d-flex justify-content-between sticky-top">
            <Link className="logo" to="/">Discussion </Link>
            
-            <Link className="" to={`/user/${currentUser?currentUser.username: ''}`}>Welcome back, {currentUser?currentUser.username : ''}</Link>
            <ul className="nav d-none d-lg-flex">
                <li className="nav-item">
                    <Link className="nav-link" to="/">Home</Link>
