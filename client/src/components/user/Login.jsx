@@ -148,7 +148,7 @@ function Login(){
            <div className="d-flex justify-content-between my-2 col-lg-6 mx-lg-auto">
            <Link className=" text-white login-link" to="/user/register">Signup</Link>
 
-           <Link className=" text-white login-link " to="/user/forgot">Forgot password?</Link>
+           <Link className=" text-white login-link " to="/user/forgot-password">Forgot password?</Link>
 
            </div>
 
