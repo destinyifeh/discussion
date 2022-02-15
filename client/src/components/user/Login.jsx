@@ -24,7 +24,8 @@ function Login(){
            
            setIsLogin(true);
 
-          //let checkUsername = users.map(user=>user.username);
+          let verified = users.map(user=>user.isVerified !== 'true');
+            console.log(verified)
            let checkUsername = users.filter(user=>user.username.toLowerCase().includes(username) || user.username.toUpperCase().includes(username));
              console.log(checkUsername)
            if(!username || !password){
@@ -32,6 +33,13 @@ function Login(){
             console.log(err);
             toast.error('You can not submit empty form');
             return false;
+           }
+           if(!verified){
+               let err = 'This email is not verified';
+               console.log(err)
+               toast.error('This email is not verified');
+            
+               return false;
            }
            if(checkUsername){
             let success = 'User found';
@@ -77,7 +85,7 @@ function Login(){
 
         .catch(err=>{
             console.log(err.response);
-            toast.error('Oops! An error occur, try again');
+            toast.error('Oops! An error occurred, try again');
             setIsLogin(false);
 
         })

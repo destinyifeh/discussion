@@ -50,7 +50,7 @@ function Verify(){
             })
             .catch(err=>{
                 console.log(err.response)
-                toast.error('Oops! An error occur, try again')
+                toast.error('Oops! An error occurred, try again')
             })
              return true;
           }else{
