@@ -90,9 +90,9 @@ function Forgot(){
                </div>
            </form>
            <div className="d-flex justify-content-between my-2 col-lg-6 mx-lg-auto">
-           <Link className=" text-white login-link" to="/register">Signup</Link>
+           <Link className=" text-white login-link" to="/user/register">Signup</Link>
 
-           <Link className=" text-white login-link " to="/login">Login</Link>
+           <Link className=" text-white login-link " to="/user/login">Login</Link>
 
            </div>
 
