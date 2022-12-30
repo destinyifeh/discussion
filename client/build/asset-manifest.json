@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fcbc3998.chunk.css",
+    "main.js": "/static/js/main.6fcdfeeb.chunk.js",
+    "main.js.map": "/static/js/main.6fcdfeeb.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.776c1e0d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.776c1e0d.js.map",
+    "static/css/2.3a79a175.chunk.css": "/static/css/2.3a79a175.chunk.css",
+    "static/js/2.afb497cb.chunk.js": "/static/js/2.afb497cb.chunk.js",
+    "static/js/2.afb497cb.chunk.js.map": "/static/js/2.afb497cb.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.3a79a175.chunk.css.map": "/static/css/2.3a79a175.chunk.css.map",
+    "static/css/main.fcbc3998.chunk.css.map": "/static/css/main.fcbc3998.chunk.css.map",
+    "static/js/2.afb497cb.chunk.js.LICENSE.txt": "/static/js/2.afb497cb.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.f691f37e.woff",
+    "static/media/index.css": "/static/media/roboto-vietnamese-400-normal.c0bec65d.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.776c1e0d.js",
+    "static/css/2.3a79a175.chunk.css",
+    "static/js/2.afb497cb.chunk.js",
+    "static/css/main.fcbc3998.chunk.css",
+    "static/js/main.6fcdfeeb.chunk.js"
+  ]
+}
